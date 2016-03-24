@@ -1,0 +1,17 @@
+<h1>This is all pages created</h1>
+<%= link_to 'Create new page', new_page_path %>
+<table>
+  <tr>
+    <th> Title </th>
+    <th> Description </th>
+  </tr>
+  <% @pages.each do |page| %>
+    <tr>
+      <td> <%= page.title %> </td>
+      <td> <%= page.description %> </td>
+      <td> <%= link_to 'Edit', edit_page_path(page) %></td>
+      <td> <%= link_to 'Show' , page_path(page) %>
+      <td> <%= link_to 'Destroy', page_path(page), method: :delete, data: { confirm: 'Are you sure' } %>
+    </tr>
+  <% end %>
+</table>
