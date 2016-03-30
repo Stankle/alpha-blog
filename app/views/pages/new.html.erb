@@ -1,5 +1,11 @@
 <h1> Creating a new page </h1>
-
+<%if @page.errors.any? %>
+<ul>
+<% @page.errors.full_messages.each do |msg| %>
+<li style = "background:#ff8c8c"> <%= msg %> </li>
+<% end %>
+</ul>
+<% end %>
 <%= form_for @page do |f|%>
   <%= f.label :Title %>
   <%= f.text_field :title %> <br/><br/>

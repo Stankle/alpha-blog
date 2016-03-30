@@ -14,7 +14,10 @@ class PagesController < ApplicationController
   def create
     @page = Page.new(params.require(:page).permit( :title, :description ))
     if @page.save
+      flash[:notice] = "Page was sucefully created"
       redirect_to pages_path
+    else
+      render 'new'
     end
   end
 
