@@ -2,11 +2,14 @@
 <html>
 <head>
   <title>AlphaBlog</title>
+  <script src="/pace/pace.js"></script>
+  <link href="/pace/themes/pace-theme-barber-shop.css" rel="stylesheet" />
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <%= render 'layouts/navbar' %>
   <%= render 'layouts/messages' %>
 <%= yield %>
 

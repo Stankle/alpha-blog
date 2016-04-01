@@ -41,6 +41,16 @@ class PagesController < ApplicationController
     redirect_to pages_path
   end
 
+  def search
+    @page = Page.find_by id: params[:q]
+    if @page.nil?
+      flash[:not_found] = "Page not found"
+      redirect_to pages_path
+    else
+      redirect_to page_path(@page)
+    end
+  end
+
   def about
   end
 end

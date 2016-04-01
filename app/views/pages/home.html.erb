@@ -1,8 +1,41 @@
-<html>
-  <header id="header"><h1>This is a home page</h1><%= image_tag 'smile3.png', size: '80' %></header>
-  <body>
+<script>
+function Load(View){
+        loadingBar();
+        $("#carregar").load(View);
+
+    };
+    $(document).ready(function(e) {
+        $("#a1").click(function(e) {
+           Load('page1.html');
+        });
+        //CHAMADO NO INICIO DA PÁGINA
+        Load('page1.html');
+    });
+    //EFEITO ESPERADO ...
+    $(document).ajaxStart(function() {
+        $("#divLoading").fadeIn(0);
+    });
+    $(document).ajaxComplete(function(event, XMLHttpRequest, ajaxOptions) {
+        $("#divLoading").fadeOut(1250);
+    });
+
+</script>
+<div style="display:none;" id="divLoading">
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+      <span class="sr-only"></span>
+   </div>
+  </div>
+</div>
+<div id="carregar"></div>
+
+ <div class="jumbotron">
+  <div class="container center">
+    <header id="header center" class="center"><h1>This is a home page</h1><%= image_tag 'smile3.png', size: '80' %></header>
     anything here
-  </body>
-</html>
-<%= link_to 'About', about_path %>
-<%= link_to 'Index', pages_path %>
+    <%= link_to 'About', about_path %>
+    <%= link_to 'Index', pages_path %>
+    <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+  </div>
+</div>
+</div>
