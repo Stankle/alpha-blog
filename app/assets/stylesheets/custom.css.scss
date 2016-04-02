@@ -1,6 +1,23 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+#logo{
+	float: left;
+	text-transform: uppercase;
+	font-size: 1.7em;
+	letter-spacing: -1px;
+	font-weight: bold;
+}
+
+#logo:hover{
+	color: #aaa;
+	text-decoration: none;
+}
+
+.jumbotron{
+	background-image: url("smile3.png");
+}
+
 .center{
   text-align: center;
 }
