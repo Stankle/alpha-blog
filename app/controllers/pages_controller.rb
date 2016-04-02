@@ -16,7 +16,7 @@ class PagesController < ApplicationController
     @page = Page.new(page_params)
     if @page.save
       flash[:notice] = "Page was sucefully created"
-      redirect_to pages_path
+      redirect_to page_path(@page)
     else
       render 'new'
     end
