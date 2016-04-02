@@ -8,7 +8,13 @@
   -o-transition: width 0.0001s ease;
   transition: width 0.0001s ease;
 }
-
+.navbar-collapse.collapse {
+    text-align: center;
+    display: block !important;
+    height: auto !important;
+    padding-bottom: 0;
+    overflow: visible !important;
+}
 .center{
   text-align: center;
 }
