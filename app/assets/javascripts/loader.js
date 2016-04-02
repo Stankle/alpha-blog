@@ -1,19 +1,35 @@
 (function(){
   var percentLoaded = 0;
-  var loading = setInterval(function(){
-    $('.progress-bar').css("width", percentLoaded + "%");
-    if (percentLoaded >= 100)
-      clearInterval(loading);
-    else
+  {
+    var loading = setInterval(function(){
+      console.log(document.readyState);
+      $('.progress-bar').css("width", percentLoaded + "%");
+      document.querySelector(".progress-bar").textContent = percentLoaded;
+      if (percentLoaded >= 100)
       {
-        console.log(percentLoaded);
-        percentLoaded++;
-        $('.progress-bar').css("width", percentLoaded + "%");
+        clearInterval(loading);
+        hideProgressBar();
       }
-  },1);
+      else if (document.readyState == "loading")
+      {
+        percentLoaded += 25;
+      }
+      else if (document.readyState == "loaded")
+      {
+        percentLoaded += 25;
+      }
+      else if (document.readyState == "interactive")
+      {
+        percentLoaded += 25;
+      }
+      else if (document.readyState == "complete")
+      {
+        percentLoaded += 25;
+      }
+    },1)
+  };
 })();
 
 var hideProgressBar = function(){
-  var bar = document.querySelector(".progress");
-  document.body.removeChild(bar);
+  $('.progress').css("display", "none");
 }
