@@ -1,10 +1,4 @@
-<%if @page.errors.any? %>
-<ul>
-<% @page.errors.full_messages.each do |msg| %>
-<li style = "background:#ff8c8c"> <%= msg %> </li>
-<% end %>
-</ul>
-<% end %>
+<%= render 'shared/errors', obj: @page %>
 <div class='row'>
 	<div class='col-xs-12'>
 		<%= form_for @page, html: {class: "form-horizontal", role: "form"} do |f|%>
