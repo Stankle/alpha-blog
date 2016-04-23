@@ -20,8 +20,35 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  last_updated: "last_updated:"
+  created_by: "Created by:"
   hello: "Hello world"
   copyright: "Maked by Stanley"
+  toggle_navigation: "Toggle navigation"
+  pages: "Pages"
+  new_page: "New page"
+  action: "Action"
+  another_action: "Another action"
+  something_else_here: "Something else here"
+  separated_link: "Separated link"
+  one_more_separated_link: "One more separated link"
+  page_created:	"Page was sucefully created"
+  page_updated: "Page was successfully updated"
+  page_deleted: "Page was successfully deleted"
+  page_not_found: "Page not found"
+  title: "Title"
+  description: "Description"
+  creating_page: "Creating a new page"
+  about:
+    header: "This is a about page"
+  home:
+    header: "This is a home page"
+    sign_up: "Sign up"
+  index:
+    pages_header: "This is all pages created"
+    edit: "Edit this page"
+    delete: "Delete this page"
+    confirm: "Are you sure you want to delete this page?"
   errors:
     # The values :model, :attribute and :value are always available for interpolation
     # The value :count is available when applicable. Can be used for pluralization.

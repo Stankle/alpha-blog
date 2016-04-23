@@ -1,7 +1,7 @@
 <div class="jumbotron">
  <div class="container center">
-   <header id="header center" class="center"><h1>This is a home page</h1></header>
-	 	<p><a class="btn btn-primary btn-lg btn-xlarge" href="#" role="button">Sign up</a></p>
+   <header id="header center" class="center"><h1><%= t :header, scope: [:home] %></h1></header>
+	 	<p><a class="btn btn-primary btn-lg btn-xlarge" href="#" role="button"><%= t :sign_up, scope: [:home] %></a></p>
     <%= link_to 'Index', pages_path %>
   </div>
 </div>

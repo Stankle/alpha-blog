@@ -1,5 +1,12 @@
 class PagesController < ApplicationController
 	before_action :set_page, only: [:edit, :update, :show, :destroy]
+	before_action :set_locale
+	def set_locale
+		I18n.locale = params[:locale] || I18n.default_locale
+		if !params[:locale].nil?
+			I18n.default_locale = params[:locale]
+		end
+	end
 
   def home
   end
@@ -14,8 +21,9 @@ class PagesController < ApplicationController
 
   def create
     @page = Page.new(page_params)
+		@page.user = User.first
     if @page.save
-      flash[:success] = "Page was sucefully created"
+      flash[:success] = t(:page_created)
       redirect_to page_path(@page)
     else
       render 'new'
@@ -27,7 +35,7 @@ class PagesController < ApplicationController
 
   def update
     @page.update(page_params)
-		flash[:success] = "Page was successfully updated"
+		flash[:success] = t(:page_updated)
 		render 'show'
   end
 
@@ -36,14 +44,14 @@ class PagesController < ApplicationController
 
   def destroy
     @page.delete
-		flash[:danger] = "Page was successfully deleted"
+		flash[:danger] = t(:page_deleted)
     redirect_to pages_path
   end
 
   def search
     @page = Page.find_by id: params[:q]
     if @page.nil?
-      flash[:not_found] = "Page not found"
+      flash[:not_found] = t(:page_not_found)
       redirect_to pages_path
     else
       redirect_to page_path(@page)

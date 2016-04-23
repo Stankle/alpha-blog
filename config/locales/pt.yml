@@ -1,2 +1,34 @@
 pt:
-  copyright: "Maked by me"
+  datetime:
+    distance_in_words:
+      x_days: "%{count} dias atrás"
+      x_minutes: "%{count} minutos atrás"
+      about_x_hours: "%{count} horas atrás"
+  last_updated: "última atualização:"
+  created_by: "Criado por:"
+  copyright: "Criado por Stanley"
+  toggle_navigation: "Navegação de alternância"
+  pages: "Páginas"
+  new_page: "Nova página"
+  action: "Ação"
+  another_action: "Outra Ação"
+  something_else_here: "Alguma coisa aqui"
+  separated_link: "Link separado"
+  one_more_separated_link: "Mais um link separado"
+  page_created:	"Página criada com sucesso"
+  page_updated: "Página atualizada com sucesso"
+  page_deleted: "Página deletado com sucesso"
+  page_not_found: "Pagina não encontrada"
+  title: "Título"
+  description: "Descrição"
+  creating_page: "Criando uma nova página"
+  about:
+    header: "Sobre"
+  home:
+    header: "Esta é a página inical"
+    sign_up: "Cadastre-se"
+  index:
+    pages_header: "Estas são todas as páginas criadas"
+    edit: "Editar essa página"
+    delete: "Deletar essa página"
+    confirm: "Tem certeza que quer deletar essa página?"
